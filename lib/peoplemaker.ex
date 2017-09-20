@@ -16,10 +16,13 @@ defmodule Peoplemaker.App do
   alias Peoplemaker.Repo
   alias Peoplemaker.People
 
-  def get_people do
+  def get_all_people() do
     People
     |> order_by(:id)
-    |> limit(10)
     |> Repo.all
+  end
+
+  def insert_person(first, last) do
+    Repo.insert!(%People{first: first, last: last})
   end
 end
