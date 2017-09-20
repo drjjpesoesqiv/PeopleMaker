@@ -27,8 +27,7 @@ defmodule Peoplemaker.App do
   end
 
   def add_random_person do
-    Namegen.gen
     person = Namegen.gen |> Poison.decode!(keys: :atoms!)
-    Repo.insert!(%People{first: person[:first], last: person[:last]})
+    add_person person[:first], person[:last]
   end
 end
