@@ -22,7 +22,13 @@ defmodule Peoplemaker.App do
     |> Repo.all
   end
 
-  def insert_person(first, last) do
+  def add_person(first, last) do
     Repo.insert!(%People{first: first, last: last})
+  end
+
+  def add_random_person do
+    Namegen.gen
+    person = Namegen.gen |> Poison.decode!(keys: :atoms!)
+    Repo.insert!(%People{first: person[:first], last: person[:last]})
   end
 end
