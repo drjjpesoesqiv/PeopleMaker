@@ -2,6 +2,16 @@
 # and its dependencies with the aid of the Mix.Config module.
 use Mix.Config
 
+config :peoplemaker, ecto_repos: [Peoplemaker.Repo]
+
+config :peoplemaker, Peoplemaker.Repo,
+  adapter: Ecto.Adapters.MySQL,
+  database: "people",
+  username: "root",
+  password: "root",
+  hostname: "192.168.99.100",
+  port: "32775"
+
 # This configuration is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this
 # file won't be loaded nor affect the parent project. For this reason,
