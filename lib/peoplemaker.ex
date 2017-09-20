@@ -6,7 +6,6 @@ defmodule Peoplemaker.People do
   use Ecto.Schema
   
   schema "people" do
-    # field :id, :integer
     field :first
     field :last
   end
@@ -23,21 +22,4 @@ defmodule Peoplemaker.App do
     |> limit(10)
     |> Repo.all
   end
-  @moduledoc """
-  Documentation for Peoplemaker.
-  """
-
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Peoplemaker.hello
-      :world
-
-  """
-  def hello do
-    :world
-  end
-  
 end
